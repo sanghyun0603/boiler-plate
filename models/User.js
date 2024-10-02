@@ -1,5 +1,3 @@
-const { default: mongoose } = require("mongoose");
-
 mongoose = require("mongoose");
 const userSchema = mongoose.Schema({
   name: {
