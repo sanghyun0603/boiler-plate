@@ -1,9 +1,9 @@
-const express = require("express");
+import express from "express";
+import mongoose from "mongoose";
+import mongoURI from "./config/key.js";
+import User from "./models/User.js";
 const app = express();
 const port = 5050;
-const { User } = require("./models/User");
-
-const config = require("./config/key");
 
 //application/x-xxx-form-urlencoded
 app.use(express.urlencoded({ extended: true }));
@@ -11,10 +11,8 @@ app.use(express.urlencoded({ extended: true }));
 //application/json 파싱
 app.use(express.json());
 
-const mongoose = require("mongoose");
-
 mongoose
-  .connect(config.mongoURI, {})
+  .connect(mongoURI, {})
   .then(() => console.log("mongodb connedt"))
   .catch((err) => console.log(err));
 

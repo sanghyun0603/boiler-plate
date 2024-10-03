@@ -1,3 +1,3 @@
-module.exports = {
-  mongoURI: process.env.MONGO_URI,
-};
+const mongoURI2 = process.env.MONGO_URI;
+
+export default mongoURI2;
